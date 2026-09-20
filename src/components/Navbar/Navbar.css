@@ -1,0 +1,255 @@
+.navbar {
+  width: 100%;
+  background-color: var(--white);
+  border-bottom: 1px solid rgba(23, 50, 77, 0.08);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 16px 32px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+/* =========================
+   LOGO
+========================= */
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.logo-mark {
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: var(--yellow);
+  color: var(--navy);
+
+  border-radius: 12px;
+
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.logo-text {
+  color: var(--navy);
+  font-size: 19px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.logo-text strong {
+  font-weight: 800;
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.nav-links a {
+  position: relative;
+
+  color: var(--text-dark);
+  font-size: 14px;
+  font-weight: 600;
+
+  padding: 8px 2px;
+
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: var(--teal);
+  transform: translateY(-1px);
+}
+
+.nav-links a.active {
+  color: var(--teal);
+}
+
+.nav-links a.active::after {
+  content: "";
+
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  height: 2px;
+
+  background-color: var(--teal);
+  border-radius: 10px;
+}
+
+/* =========================
+   ACTIONS
+========================= */
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.search-button {
+  width: 40px;
+  height: 40px;
+
+  border: 1px solid rgba(23, 50, 77, 0.12);
+  border-radius: 12px;
+
+  background-color: var(--white);
+
+  font-size: 16px;
+
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.search-button:hover {
+  background-color: var(--cream);
+  transform: translateY(-1px);
+}
+
+.whatsapp-button {
+  padding: 11px 18px;
+
+  background-color: var(--teal);
+  color: var(--white);
+
+  border-radius: 12px;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.whatsapp-button:hover {
+  background-color: #189f90;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(32, 184, 166, 0.25);
+}
+
+/* =========================
+   MOBILE MENU BUTTON
+========================= */
+
+.menu-button {
+  display: none;
+
+  width: 40px;
+  height: 40px;
+
+  border: none;
+  border-radius: 12px;
+
+  background-color: var(--cream);
+  color: var(--navy);
+
+  font-size: 20px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 950px) {
+
+  .nav-links {
+    gap: 18px;
+  }
+
+  .whatsapp-button {
+    display: none;
+  }
+
+}
+
+@media (max-width: 760px) {
+
+  .navbar-container {
+    padding: 14px 20px;
+  }
+
+  .nav-links {
+    position: absolute;
+
+    top: 100%;
+    left: 0;
+    right: 0;
+
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 0;
+
+    padding: 20px;
+
+    background-color: var(--white);
+
+    border-bottom: 1px solid rgba(23, 50, 77, 0.08);
+
+    box-shadow: 0 10px 30px rgba(23, 50, 77, 0.08);
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links a {
+    width: 100%;
+    padding: 14px 8px;
+  }
+
+  .nav-links a.active::after {
+    display: none;
+  }
+
+  .navbar-actions {
+    margin-left: auto;
+  }
+
+  .menu-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .logo-text {
+    font-size: 17px;
+  }
+
+  .logo-mark {
+    width: 36px;
+    height: 36px;
+  }
+}
