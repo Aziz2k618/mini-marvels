@@ -4,14 +4,16 @@ import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import './App.css'  
 import Navbar from "./components/Navbar/Navbar.jsx";
+import Home from "./pages/Home/Home.jsx";
+import Footer from "./components/Footer/Footer.jsx";
 
 function App() {
   return (
-    <div>
+    <>
       <Navbar />
-      <h1>Mini Marvels</h1>
-      <p>Stationery & Toys</p>
-    </div>
+      <Home />
+      <Footer />
+    </>
   );
 }
 
