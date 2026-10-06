@@ -6,6 +6,7 @@ import Navbar from "./components/Navbar/Navbar.jsx";
 import Home from "./pages/Home/Home";
 import Shop from "./pages/Shop/Shop";
 import About from "./pages/About/About";
+import Contact from "./pages/Contact/Contact";
 import ProductDetails from "./pages/ProductDetails/ProductDetails.jsx";
 import Footer from "./components/Footer/Footer.jsx";
 
@@ -17,6 +18,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/shop" element={<Shop />} />
         <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
         <Route path="/product/:slug" element={<ProductDetails />} />
       </Routes>
       <Footer />
