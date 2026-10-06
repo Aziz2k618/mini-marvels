@@ -1,25 +1,28 @@
+
 .product-card {
-  display: block;
+  background: #fff;
+  border-radius: 20px;
   overflow: hidden;
 
-  background-color: var(--white);
-  border: 1px solid rgba(23, 50, 77, 0.08);
-  border-radius: 24px;
-
   transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease;
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .product-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 14px 30px rgba(23, 50, 77, 0.1);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
 }
 
+
+/* Product Image */
+
 .product-image {
-  height: 280px;
+  width: 100%;
+  height: 250px;
+
   overflow: hidden;
-  background-color: var(--cream);
+  background-color: #f8f5ed;
 }
 
 .product-image img {
@@ -28,41 +31,81 @@
 
   object-fit: cover;
 
-  transition: transform 0.35s ease;
+  display: block;
+
+  transition: transform 0.3s ease;
 }
 
 .product-card:hover .product-image img {
-  transform: scale(1.05);
+  transform: scale(1.03);
 }
+
+
+/* Product Information */
 
 .product-info {
-  padding: 20px;
+  padding: 18px;
 }
 
-.product-info span {
-  display: block;
-  margin-bottom: 7px;
+.product-category {
+  margin-bottom: 6px;
 
-  color: var(--teal);
+  font-size: 13px;
 
-  font-size: 11px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.6px;
+  opacity: 0.6;
 }
 
 .product-info h3 {
-  margin-bottom: 8px;
+  margin: 0 0 10px;
 
-  color: var(--navy);
-
-  font-size: 17px;
-  font-weight: 700;
+  font-size: 18px;
 }
 
-.product-info p {
-  color: var(--text-dark);
+.product-price {
+  margin-bottom: 15px;
 
-  font-size: 15px;
-  font-weight: 700;
+  font-weight: 600;
 }
+
+
+/* Product Button */
+
+.product-button {
+  display: block;
+
+  width: 100%;
+  padding: 11px;
+
+  box-sizing: border-box;
+
+  border: 1.5px solid var(--yellow);
+  border-radius: 10px;
+
+  background: transparent;
+  color: inherit;
+
+  cursor: pointer;
+
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+.product-button:hover {
+  background-color: var(--yellow);
+  color: var(--white);
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+  .product-image {
+    height: 280px;
+  }
+}
+
