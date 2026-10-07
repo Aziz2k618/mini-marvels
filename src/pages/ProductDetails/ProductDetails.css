@@ -15,23 +15,17 @@
 
 .product-details-image {
   width: 100%;
-  height: 520px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  background-color: #f8f5ed;
-  border-radius: 28px;
-
+  aspect-ratio: 4 / 3;
   overflow: hidden;
+  border-radius: 24px;
 }
 
 .product-details-image img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
-  padding: 10px;
+  display: block;
+  object-fit: cover;
+  object-position: center;
 }
 
 
@@ -164,5 +158,90 @@
   .whatsapp-button {
     width: 100%;
     text-align: center;
+  }
+}
+/* =========================
+   RELATED PRODUCTS
+========================= */
+
+.related-products {
+  grid-column: 1 / -1;
+  max-width: 1200px;
+  margin: 90px auto 0;
+  padding: 0 24px 80px;
+}
+
+.related-products-header {
+  margin-bottom: 30px;
+}
+
+.related-products-header span {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--teal);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.related-products-header h2 {
+  margin: 0;
+  color: var(--navy);
+  font-size: 32px;
+  line-height: 1.2;
+}
+
+.related-products-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  width: 100%;
+}
+
+/* Make ProductCard fill its grid column */
+.related-products-grid .product-card {
+  width: 100%;
+  min-width: 0;
+}
+
+/* Make the product image fill the card */
+.related-products-grid .product-image {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  height: auto;
+  overflow: hidden;
+}
+
+.related-products-grid .product-image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+  .related-products-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .related-products {
+    margin-top: 70px;
+    padding: 0 20px 50px;
+  }
+
+  .related-products-header h2 {
+    font-size: 26px;
+  }
+
+  .related-products-grid {
+    grid-template-columns: 1fr;
   }
 }

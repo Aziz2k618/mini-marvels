@@ -1,11 +1,13 @@
 import "./Shop.css";
 import ProductCard from "../../components/ProductCard/ProductCard";
 import products from "../../data/products";
-import { useState } from "react";
+import { useSearchParams } from "react-router-dom";
 
 
 function Shop() {
-  const [activeCategory, setActiveCategory] = useState("All");
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  const activeCategory = searchParams.get("category") || "All";
   const filteredProducts =
   activeCategory === "All"
     ? products
@@ -31,21 +33,21 @@ function Shop() {
         <div className="shop-filters">
           <button
             className={activeCategory === "All" ? "active" : ""}
-            onClick={() => setActiveCategory("All")}
+            onClick={() => setSearchParams({})}
           >
             All
           </button>
 
           <button
             className={activeCategory === "Stationery" ? "active" : ""}
-            onClick={() => setActiveCategory("Stationery")}
+            onClick={() => setSearchParams({ category: "Stationery" })}
           >
             Stationery
           </button>
 
           <button
             className={activeCategory === "Toys" ? "active" : ""}
-            onClick={() => setActiveCategory("Toys")}
+            onClick={() => setSearchParams({ category: "Toys" })}
           >
             Toys
           </button>

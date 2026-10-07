@@ -1,12 +1,19 @@
 import { useParams } from "react-router-dom";
 import products from "../../data/products";
 import "./ProductDetails.css";
+import ProductCard from "../../components/ProductCard/ProductCard";
 
 function ProductDetails() {
   const { slug } = useParams();
 
   const product = products.find(
     (product) => product.link === `/product/${slug}`
+  );
+
+  const relatedProducts = products.filter(
+  (item) =>
+    item.category === product?.category &&
+    item.id !== product?.id
   );
 
   if (!product) {
@@ -51,8 +58,30 @@ function ProductDetails() {
       ORDER ON WHATSAPP
     </a>
       </div>
+            
+
+      <section className="related-products">
+        <div className="related-products-header">
+          <span>KEEP EXPLORING</span>
+          <h2>You may also like</h2>
+        </div>
+
+        <div className="related-products-grid">
+          {relatedProducts.map((product) => (
+            <ProductCard
+              key={product.id}
+              name={product.name}
+              price={product.price}
+              category={product.category}
+              image={product.image}
+              link={product.link}
+            />
+          ))}
+        </div>
+      </section>
     </main>
   );
 }
+    
 
 export default ProductDetails;
