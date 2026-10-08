@@ -174,3 +174,52 @@
 
   box-shadow: 0 6px 16px rgba(23, 50, 77, 0.15);
 }
+
+.shop-filters {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.shop-filters button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  padding: 11px 18px;
+
+  border: 1px solid rgba(23, 50, 77, 0.12);
+  border-radius: 14px;
+
+  background-color: var(--white);
+  color: var(--navy);
+
+  font-size: 14px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.shop-filters button svg {
+  width: 17px;
+  height: 17px;
+  flex-shrink: 0;
+}
+
+.shop-filters button:hover {
+  transform: translateY(-2px);
+  border-color: var(--teal);
+}
+
+.shop-filters button.active {
+  background-color: var(--teal);
+  border-color: var(--teal);
+  color: var(--white);
+}

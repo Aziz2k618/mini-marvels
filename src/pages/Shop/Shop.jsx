@@ -2,6 +2,8 @@ import "./Shop.css";
 import ProductCard from "../../components/ProductCard/ProductCard";
 import products from "../../data/products";
 import { useSearchParams } from "react-router-dom";
+import { FiGrid, FiEdit3, FiBox } from "react-icons/fi";
+import EmptyState from "../../components/EmptyState/EmptyState";
 
 
 function Shop() {
@@ -47,22 +49,25 @@ function Shop() {
             className={activeCategory === "All" ? "active" : ""}
             onClick={() => setSearchParams({})}
           >
-            All
+            <FiGrid />
+            <span>All</span>
           </button>
 
           <button
             className={activeCategory === "Stationery" ? "active" : ""}
             onClick={() => setSearchParams({ category: "Stationery" })}
           >
-            Stationery
+            <FiEdit3 />
+            <span>Stationery</span>
           </button>
 
           <button
             className={activeCategory === "Toys" ? "active" : ""}
             onClick={() => setSearchParams({ category: "Toys" })}
           >
-            Toys
-          </button>
+            <FiBox />
+            <span>Toys</span>
+        </button>
         </div>
       )}
 
@@ -79,18 +84,12 @@ function Shop() {
               />
             ))
           ) : (
-            <div className="shop-empty-state">
-              <h2>No products found</h2>
-
-              <p>
-                We couldn't find anything matching your search.
-                Try another product name or category.
-              </p>
-
-              <button onClick={() => setSearchParams({})}>
-                View All Products
-              </button>
-            </div>
+            <EmptyState
+              title="No products found"
+              message="We couldn't find anything matching your search. Try another product name or category."
+              buttonText="View All Products"
+              buttonLink="/shop"
+            />
           )}
       </div>
 

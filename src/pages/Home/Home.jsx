@@ -1,7 +1,16 @@
 import "./Home.css";
+import { Link } from "react-router-dom";
+import products from "../../data/products";
+import { Pencil, Blocks } from "lucide-react";
+
 import CategoryCard from "../../components/CategoryCard/CategoryCard";
 import ProductCard from "../../components/ProductCard/ProductCard";
+
 import heroImage from "../../assets/hero-image.png";
+
+import stationeryImage from "../../assets/Stationary-image.jpg";
+import toysImage from "../../assets/toys-image.jpg";
+
 
 
 function Home() {
@@ -27,13 +36,16 @@ function Home() {
           </p>
 
           <div className="hero-buttons">
-            <a href="/shop" className="hero-button primary">
-              Shop Now
-            </a>
+            <Link to="/shop" className="hero-button primary">
+            Shop Now
+            </Link>
 
-            <a href="/toys" className="hero-button secondary">
-              Explore Toys
-            </a>
+            <Link
+            to="/shop?category=Toys"
+            className="hero-button secondary"
+            >
+            Explore Toys
+            </Link>
           </div>
         </div>
       </section>
@@ -52,15 +64,17 @@ function Home() {
           <CategoryCard
             title="Stationery"
             description="Creative supplies for drawing, writing, learning, and making."
-            image="src/assets/Stationary-image.jpg"
-            link="/stationery"
+            image={stationeryImage}
+            link="/shop?category=Stationery"
+            icon={Pencil}
           />
 
           <CategoryCard
             title="Toys"
             description="Fun and engaging toys made for play, discovery, and imagination."
-            image="src\assets\toys-image.jpg"
-            link="/toys"
+            image={toysImage}
+            link="/shop?category=Toys"
+            icon={Blocks}
           />
         </div>
       </section>
@@ -75,40 +89,19 @@ function Home() {
         </div>
 
         <div className="product-grid">
+        {products.slice(0, 4).map((product) => (
           <ProductCard
-            name="Color Pencil Set"
-            price="450"
-            category="Stationery"
-            image="src/assets/products/P1.jpg"
-            link="/product/color-pencil-set"
-          />
-
-          <ProductCard
-            name="Creative Notebook"
-            price="550"
-            category="Stationery"
-            image="src/assets/products/P2.jpg"
-            link="/product/creative-notebook"
-          />
-
-          <ProductCard
-            name="Wooden Building Blocks"
-            price="1,200"
-            category="Toys"
-            image="src/assets/products/P3.jpg"
-            link="/product/wooden-building-blocks"
-          />
-
-          <ProductCard
-            name="Wooden Rainbow"
-            price="950"
-            category="Toys"
-            image="src/assets/products/P4.jpg"
-            link="/product/wooden-rainbow"
-          />
-        </div>
+            key={product.id}
+            name={product.name}
+            price={product.price}
+            category={product.category}
+            image={product.image}
+            link={product.link}
+        />
+      ))}
+</div>
         <div className="view-all-products">
-          <a href="/shop">View All Products →</a>
+          <Link to="/shop">View All Products →</Link>
         </div>
       </section>
 

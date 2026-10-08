@@ -46,7 +46,6 @@
   max-width: 1200px;
   margin: 0 auto 120px;
   padding: 0 40px;
-
   display: grid;
   grid-template-columns: 0.9fr 1.1fr;
   gap: 70px;
@@ -77,11 +76,15 @@
 .contact-details {
   display: flex;
   flex-direction: column;
-  gap: 18px;
 }
 
 .contact-detail {
-  padding: 22px;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 24px;
+  min-height: 110px;
+  margin-bottom: 24px;
   background: var(--cream);
   border-radius: 18px;
   transition:
@@ -90,8 +93,22 @@
 }
 
 .contact-detail:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(23, 50, 77, 0.08);
+}
+
+.contact-detail-icon {
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+  background: var(--yellow);
+  color: var(--navy);
 }
 
 .contact-detail h3 {
@@ -118,13 +135,28 @@
   text-decoration: underline;
 }
 
+.contact-detail-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.contact-detail-icon.whatsapp-icon {
+  background: var(--teal);
+  color: var(--white);
+}
+
+.contact-detail-content {
+  min-width: 0;
+}
+
 
 /* =========================
    FORM
 ========================= */
 
 .contact-form-wrapper {
-  padding: 40px;
+  margin-top: 110px;
+  padding: 50px 40px;
   background: var(--cream);
   border-radius: 28px;
 }
@@ -184,6 +216,11 @@
   width: 100%;
   padding: 15px;
 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
   border: none;
   border-radius: 50px;
 
@@ -202,11 +239,15 @@
     opacity 0.2s ease;
 }
 
+.contact-form button svg {
+  width: 17px;
+  height: 17px;
+}
+
 .contact-form button:hover {
   transform: translateY(-2px);
   opacity: 0.9;
 }
-
 
 /* =========================
    RESPONSIVE
@@ -225,6 +266,10 @@
 
   .contact-info > p {
     max-width: 650px;
+  }
+
+  .contact-form-wrapper {
+    margin-top: 0;
   }
 }
 
@@ -256,4 +301,12 @@
   .contact-info h2 {
     font-size: 40px;
   }
+}
+
+.form-success {
+  margin: 14px 0 0;
+  color: var(--teal);
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
 }

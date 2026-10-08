@@ -1,7 +1,13 @@
 import { useParams } from "react-router-dom";
+
 import products from "../../data/products";
+
 import "./ProductDetails.css";
+
 import ProductCard from "../../components/ProductCard/ProductCard";
+
+import { FiTag } from "react-icons/fi";
+import { FaWhatsapp } from "react-icons/fa";
 
 function ProductDetails() {
   const { slug } = useParams();
@@ -27,9 +33,10 @@ function ProductDetails() {
       </div>
 
       <div className="product-details-info">
-        <p className="product-details-category">
-          {product.category}
-        </p>
+       <div className="product-details-category">
+        <FiTag />
+        <span>{product.category}</span>
+      </div>
 
         <h1>{product.name}</h1>
 
@@ -44,19 +51,23 @@ function ProductDetails() {
         
 
         <a
-      href={`https://wa.me/?text=${encodeURIComponent(
-        `Hi Mini Marvels! I'd like to order:
+          href={`https://wa.me/?text=${encodeURIComponent(
+            `Hi Mini Marvels! I'd like to order:
 
-    Product: ${product.name}
-    Price: Rs. ${product.price}
-    Product Link: ${window.location.href}`
-      )}`}
-      target="_blank"
-      rel="noreferrer"
-      className="whatsapp-button"
-    >
-      ORDER ON WHATSAPP
-    </a>
+        Product: ${product.name}
+        Price: Rs. ${product.price}
+        Category: ${product.category}
+        Product Link: ${window.location.href}
+
+        Please let me know the next steps. Thank you!`
+          )}`}
+          target="_blank"
+          rel="noreferrer"
+          className="whatsapp-button"
+        >
+          <FaWhatsapp />
+          <span>ORDER ON WHATSAPP</span>
+        </a>
       </div>
             
 

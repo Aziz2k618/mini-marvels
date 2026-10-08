@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./Footer.css";
 
 function Footer() {
@@ -6,12 +7,13 @@ function Footer() {
       <div className="footer-container">
 
         <div className="footer-brand">
-          <a href="/" className="footer-logo">
+          <Link to="/" className="footer-logo">
             <span className="footer-logo-mark">M</span>
+
             <span>
               Mini <strong>Marvels</strong>
             </span>
-          </a>
+          </Link>
 
           <p>
             Fun toys, creative stationery, and little essentials
@@ -20,39 +22,52 @@ function Footer() {
         </div>
 
         <div className="footer-links">
+
           <div className="footer-column">
             <h3>Explore</h3>
-            <a href="/">Home</a>
-            <a href="/shop">Shop</a>
-            <a href="/stationery">Stationery</a>
-            <a href="/toys">Toys</a>
+
+            <Link to="/">Home</Link>
+            <Link to="/shop">Shop</Link>
+            <Link to="/shop?category=Stationery">
+              Stationery
+            </Link>
+            <Link to="/shop?category=Toys">
+              Toys
+            </Link>
           </div>
 
           <div className="footer-column">
             <h3>Company</h3>
-            <a href="/about">About Us</a>
-            <a href="/contact">Contact Us</a>
+
+            <Link to="/about">About Us</Link>
+            <Link to="/contact">Contact Us</Link>
           </div>
 
           <div className="footer-column">
             <h3>Get in Touch</h3>
-            <a href="https://wa.me/923001234567">
+
+            <a
+              href="https://wa.me/923001234567"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               WhatsApp
             </a>
+
             <a href="mailto:hello@minimarvels.com">
               Email Us
             </a>
           </div>
-        </div>
 
+        </div>
       </div>
 
       <div className="footer-bottom">
         <p>© 2026 Mini Marvels. All rights reserved.</p>
 
         <div className="footer-bottom-links">
-          <a href="/privacy">Privacy Policy</a>
-          <a href="/terms">Terms & Conditions</a>
+          <span>Privacy Policy</span>
+          <span>Terms &amp; Conditions</span>
         </div>
       </div>
     </footer>

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { NavLink, Link, useLocation } from "react-router-dom";
 import products from "../../data/products";
+import { Search, Menu, X } from "lucide-react";
 
 
 import "./Navbar.css";
@@ -129,10 +130,10 @@ function Navbar() {
 
           <button
             className="search-button"
+            onClick={() => setIsSearchOpen((previous) => !previous)}
             aria-label="Search"
-            onClick={() => setIsSearchOpen(!isSearchOpen)}
           >
-            🔍
+            <Search size={20} strokeWidth={2} />
           </button>
 
           <a
@@ -146,11 +147,14 @@ function Navbar() {
 
           <button
             className="menu-button"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            aria-label="Toggle menu"
-            aria-expanded={isMenuOpen}
+            onClick={() => setIsMenuOpen((previous) => !previous)}
+            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           >
-            {isMenuOpen ? "✕" : "☰"}
+            {isMenuOpen ? (
+              <X size={24} strokeWidth={2} />
+            ) : (
+              <Menu size={24} strokeWidth={2} />
+            )}
           </button>
 
         </div>
