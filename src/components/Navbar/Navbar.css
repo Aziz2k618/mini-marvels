@@ -1,3 +1,7 @@
+/* =========================
+   NAVBAR
+========================= */
+
 .navbar {
   width: 100%;
   background-color: var(--white);
@@ -15,7 +19,6 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-
   gap: 30px;
 }
 
@@ -28,6 +31,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
+
   flex-shrink: 0;
   text-decoration: none;
 }
@@ -62,7 +66,7 @@
 
 
 /* =========================
-   NAVIGATION
+   NAVIGATION LINKS
 ========================= */
 
 .nav-links {
@@ -75,7 +79,6 @@
   position: relative;
 
   color: var(--text-dark);
-
   font-size: 14px;
   font-weight: 600;
 
@@ -109,12 +112,13 @@
   height: 2px;
 
   background-color: var(--teal);
+
   border-radius: 10px;
 }
 
 
 /* =========================
-   ACTIONS
+   NAVBAR ACTIONS
 ========================= */
 
 .navbar-actions {
@@ -122,6 +126,9 @@
   align-items: center;
   gap: 10px;
 }
+
+
+/* Search button */
 
 .search-button {
   width: 40px;
@@ -133,6 +140,7 @@
   background-color: var(--white);
 
   font-size: 16px;
+
   cursor: pointer;
 
   transition:
@@ -147,7 +155,7 @@
 
 
 /* =========================
-   WHATSAPP CTA
+   WHATSAPP BUTTON
 ========================= */
 
 .whatsapp-button {
@@ -162,7 +170,6 @@
   font-weight: 700;
 
   text-decoration: none;
-
   white-space: nowrap;
 
   transition:
@@ -176,14 +183,11 @@
 
   transform: translateY(-2px);
 
-  box-shadow:
-    0 6px 16px rgba(53, 107, 69, 0.22);
+  box-shadow: 0 6px 16px rgba(53, 107, 69, 0.22);
 }
 
 
-/* =========================
-   MOBILE CTA
-========================= */
+/* Mobile WhatsApp button */
 
 .mobile-whatsapp-button {
   display: none;
@@ -209,6 +213,184 @@
   font-size: 20px;
 
   cursor: pointer;
+}
+
+
+/* =========================
+   SEARCH PANEL
+========================= */
+
+.search-panel {
+  width: 100%;
+
+  background-color: var(--white);
+
+  border-top: 1px solid rgba(23, 50, 77, 0.06);
+  border-bottom: 1px solid rgba(23, 50, 77, 0.08);
+
+  box-shadow: 0 8px 20px rgba(23, 50, 77, 0.06);
+}
+
+
+/* Search input row */
+
+.search-panel-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+
+  padding: 18px 32px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+}
+
+.search-panel-inner input {
+  flex: 1;
+
+  padding: 14px 16px;
+
+  border: 1px solid rgba(23, 50, 77, 0.12);
+  border-radius: 12px;
+
+  outline: none;
+
+  background-color: var(--cream);
+  color: var(--navy);
+
+  font-size: 14px;
+}
+
+.search-panel-inner input:focus {
+  border-color: var(--teal);
+}
+
+
+/* Search close button */
+
+.search-panel-inner button {
+  width: 42px;
+  height: 42px;
+
+  border: none;
+  border-radius: 12px;
+
+  background-color: var(--cream);
+  color: var(--navy);
+
+  cursor: pointer;
+
+  font-size: 16px;
+}
+
+.search-panel-inner button:hover {
+  background-color: rgba(23, 50, 77, 0.08);
+}
+
+
+/* =========================
+   SEARCH RESULTS
+========================= */
+
+.search-results {
+  max-width: 1280px;
+  margin: 0 auto;
+
+  padding: 0 32px 20px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 6px;
+}
+
+.search-result {
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+
+  width: 100%;
+
+  padding: 12px;
+
+  box-sizing: border-box;
+
+  border-radius: 14px;
+
+  text-decoration: none;
+
+  color: var(--navy);
+
+  transition: background-color 0.2s ease;
+}
+
+.search-result:hover {
+  background-color: var(--cream);
+}
+
+
+/* Search result image */
+
+.search-result img {
+  width: 64px;
+  height: 48px;
+
+  border-radius: 8px;
+
+  object-fit: cover;
+
+  flex-shrink: 0;
+}
+
+
+/* Search result category */
+
+.search-result span {
+  display: block;
+
+  margin-bottom: 3px;
+
+  color: var(--teal);
+
+  font-size: 11px;
+  font-weight: 700;
+
+  text-transform: uppercase;
+}
+
+
+/* Search result name */
+
+.search-result h3 {
+  margin: 0 0 3px;
+
+  font-size: 15px;
+}
+
+
+/* Search result price */
+
+.search-result p {
+  margin: 0;
+
+  font-size: 13px;
+
+  color: var(--text-muted);
+}
+
+
+/* No results */
+
+.search-no-results {
+  margin: 0;
+
+  padding: 5px 0 20px;
+
+  color: var(--text-muted);
+
+  font-size: 14px;
 }
 
 
@@ -251,12 +433,15 @@
     margin-left: auto;
   }
 
-  /* Hide desktop CTA */
-  .whatsapp-button {
+
+  /* Hide desktop WhatsApp */
+
+  .navbar-actions .whatsapp-button {
     display: none;
   }
 
-  /* Mobile menu */
+
+  /* Mobile navigation */
 
   .nav-links {
     position: absolute;
@@ -278,8 +463,7 @@
 
     border-bottom: 1px solid rgba(23, 50, 77, 0.08);
 
-    box-shadow:
-      0 10px 30px rgba(23, 50, 77, 0.08);
+    box-shadow: 0 10px 30px rgba(23, 50, 77, 0.08);
   }
 
   .nav-links.open {
@@ -288,6 +472,7 @@
 
   .nav-links a {
     width: 100%;
+
     padding: 14px 8px;
 
     box-sizing: border-box;
@@ -297,10 +482,13 @@
     display: none;
   }
 
-  /* Mobile WhatsApp CTA */
+
+  /* Mobile WhatsApp */
 
   .mobile-whatsapp-button {
     display: block !important;
+
+    width: 100%;
 
     margin-top: 12px;
 
@@ -324,6 +512,7 @@
     background-color: #2b5939;
   }
 
+
   /* Menu button */
 
   .menu-button {
@@ -333,6 +522,9 @@
     justify-content: center;
   }
 
+
+  /* Logo */
+
   .logo-text {
     font-size: 17px;
   }
@@ -341,4 +533,36 @@
     width: 36px;
     height: 36px;
   }
+
+
+  /* Search */
+
+  .search-panel-inner {
+    padding: 14px 20px;
+  }
+
+  .search-results {
+    padding: 0 20px 16px;
+  }
+}
+
+.search-see-more {
+  display: block;
+
+  margin-top: 6px;
+  padding: 12px;
+
+  color: var(--teal);
+
+  font-size: 14px;
+  font-weight: 700;
+
+  text-align: center;
+  text-decoration: none;
+
+  border-top: 1px solid rgba(23, 50, 77, 0.08);
+}
+
+.search-see-more:hover {
+  color: var(--navy);
 }

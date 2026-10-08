@@ -47,6 +47,16 @@ const products = [
     description:
       "A fun drawing notebook designed for kids to explore their creativity through sketches, coloring, and artwork.",
   },
+  {
+    id: 5,
+    name: "Painting Set",
+    price: 800,
+    category: "Stationery",
+    image: P1,
+    link: "/product/painting-set",
+    description:
+      "A complete painting set with brushes, paints, and a palette, perfect for young artists to express their creativity."
+  }
 ];
 
 export default products;

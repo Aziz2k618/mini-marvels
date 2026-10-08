@@ -1,12 +1,27 @@
 import { useState } from "react";
 import { NavLink, Link, useLocation } from "react-router-dom";
+import products from "../../data/products";
 
 
 import "./Navbar.css";
 
 function Navbar() {
+  
   const location = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const searchResults = products.filter((product) => {
+  const query = searchQuery.toLowerCase().trim();
+
+  if (!query) return false;
+
+  return (
+    product.name.toLowerCase().includes(query) ||
+    product.category.toLowerCase().includes(query)
+  );
+  });
 
   const closeMenu = () => {
     setIsMenuOpen(false);
@@ -115,6 +130,7 @@ function Navbar() {
           <button
             className="search-button"
             aria-label="Search"
+            onClick={() => setIsSearchOpen(!isSearchOpen)}
           >
             🔍
           </button>
@@ -140,6 +156,77 @@ function Navbar() {
         </div>
 
       </div>
+      {isSearchOpen && (
+        <div className="search-panel">
+
+          <div className="search-panel-inner">
+            <input
+              type="text"
+              placeholder="Search products..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              autoFocus
+            />
+
+            <button
+              type="button"
+              onClick={() => setIsSearchOpen(false)}
+              aria-label="Close search"
+            >
+              ✕
+            </button>
+          </div>
+
+          {searchQuery.trim() && (
+            <div className="search-results">
+             {searchResults.length > 0 ? (
+              <>
+                {searchResults.slice(0, 4).map((product) => (
+                  <Link
+                    key={product.id}
+                    to={product.link}
+                    className="search-result"
+                    onClick={() => {
+                      setIsSearchOpen(false);
+                      setSearchQuery("");
+                    }}
+                  >
+                    <img
+                      src={product.image}
+                      alt={product.name}
+                    />
+
+                    <div>
+                      <span>{product.category}</span>
+                      <h3>{product.name}</h3>
+                      <p>Rs. {product.price}</p>
+                    </div>
+                  </Link>
+                ))}
+
+                {searchResults.length > 0 && (
+                  <Link
+                    to={`/shop?search=${encodeURIComponent(searchQuery)}`}
+                    className="search-see-more"
+                    onClick={() => {
+                      setIsSearchOpen(false);
+                      setSearchQuery("");
+                    }}
+                  >
+                    See more results →
+                  </Link>
+                )}
+              </>
+            ) : (
+              <p className="search-no-results">
+                No products found. Try another search.
+              </p>
+            )}
+            </div>
+          )}
+
+        </div>
+      )}
     </header>
   );
 }

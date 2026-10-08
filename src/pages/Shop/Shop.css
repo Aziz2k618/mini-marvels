@@ -123,3 +123,54 @@
     grid-template-columns: 1fr;
   }
 }
+
+.shop-empty-state {
+  grid-column: 1 / -1;
+
+  padding: 70px 20px;
+
+  text-align: center;
+}
+
+.shop-empty-state h2 {
+  margin: 0 0 10px;
+
+  color: var(--navy);
+
+  font-size: 28px;
+}
+
+.shop-empty-state p {
+  max-width: 500px;
+
+  margin: 0 auto 24px;
+
+  color: var(--text-muted);
+
+  line-height: 1.6;
+}
+
+.shop-empty-state button {
+  padding: 12px 20px;
+
+  border: none;
+  border-radius: 12px;
+
+  background-color: var(--teal);
+  color: var(--white);
+
+  font-size: 14px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.shop-empty-state button:hover {
+  transform: translateY(-2px);
+
+  box-shadow: 0 6px 16px rgba(23, 50, 77, 0.15);
+}
