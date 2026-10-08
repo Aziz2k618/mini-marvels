@@ -10,6 +10,7 @@ import Contact from "./pages/Contact/Contact";
 import ProductDetails from "./pages/ProductDetails/ProductDetails.jsx";
 import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
 import Footer from "./components/Footer/Footer.jsx";
+import NotFound from "./pages/NotFound/NotFound";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/product/:slug" element={<ProductDetails />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
     </>
