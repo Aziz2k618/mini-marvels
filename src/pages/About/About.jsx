@@ -1,4 +1,5 @@
 import "./About.css";
+import { Palette, Sparkles, Heart } from "lucide-react";
 
 function About() {
   return (
@@ -39,37 +40,47 @@ function About() {
         </div>
       </section>
 
-      <section className="about-values">
-        <span>WHAT WE BELIEVE</span>
+      ```
+    <section className="about-values">
+      <span>WHAT WE BELIEVE</span>
+      <h2>Play. Create. Imagine.</h2>
 
-        <h2>Play. Create. Imagine.</h2>
-
-        <div className="about-value-grid">
-          <div className="about-value">
-            <h3>Creativity</h3>
-            <p>
-              Products that encourage kids to draw, build, create,
-              and express themselves.
-            </p>
+      <div className="about-value-grid">
+        <div className="about-value">
+          <div className="about-value-icon">
+            <Palette size={24} strokeWidth={1.8} />
           </div>
-
-          <div className="about-value">
-            <h3>Playfulness</h3>
-            <p>
-              Childhood should be fun, colorful, curious, and full
-              of imagination.
-            </p>
-          </div>
-
-          <div className="about-value">
-            <h3>Simple Joy</h3>
-            <p>
-              Thoughtful products that make everyday moments feel
-              a little more special.
-            </p>
-          </div>
+          <h3>Creativity</h3>
+          <p>
+            Products that encourage kids to draw, build, create,
+            and express themselves.
+          </p>
         </div>
-      </section>
+
+        <div className="about-value">
+          <div className="about-value-icon">
+            <Sparkles size={24} strokeWidth={1.8} />
+          </div>
+          <h3>Playfulness</h3>
+          <p>
+            Childhood should be fun, colorful, curious, and full
+            of imagination.
+          </p>
+        </div>
+
+        <div className="about-value">
+          <div className="about-value-icon">
+            <Heart size={24} strokeWidth={1.8} />
+          </div>
+          <h3>Simple Joy</h3>
+          <p>
+            Thoughtful products that make everyday moments feel
+            a little more special.
+          </p>
+        </div>
+      </div>
+    </section>
+
 
       <section className="about-cta">
         <h2>Ready to explore?</h2>

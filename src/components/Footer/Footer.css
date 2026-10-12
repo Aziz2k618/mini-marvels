@@ -192,3 +192,8 @@
     gap: 8px;
   }
 }
+.footer-column a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}

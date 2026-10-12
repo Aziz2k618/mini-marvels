@@ -1,11 +1,16 @@
 import { Link } from "react-router-dom";
 import "./NotFound.css";
+import { SearchX } from "lucide-react";
 
 function NotFound() {
   return (
     <main className="not-found">
       <div className="not-found-content">
         <span className="not-found-label">OOPS!</span>
+
+        <div className="not-found-icon">
+          <SearchX size={42} strokeWidth={1.7} />
+        </div>
 
         <h1>404</h1>
 

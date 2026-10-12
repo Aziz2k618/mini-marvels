@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import "./Footer.css";
+import { MessageCircle, Mail } from "lucide-react";
 
 function Footer() {
   return (
@@ -47,14 +48,16 @@ function Footer() {
             <h3>Get in Touch</h3>
 
             <a
-              href="https://wa.me/923001234567"
+              href="YOUR_EXISTING_WHATSAPP_URL"
               target="_blank"
               rel="noopener noreferrer"
             >
+              <MessageCircle size={16} strokeWidth={1.8} />
               WhatsApp
             </a>
 
             <a href="mailto:hello@minimarvels.com">
+              <Mail size={16} strokeWidth={1.8} />
               Email Us
             </a>
           </div>

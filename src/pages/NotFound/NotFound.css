@@ -74,3 +74,14 @@
     font-size: 14px;
   }
 }
+.not-found-icon {
+  width: 76px;
+  height: 76px;
+  margin: 0 auto 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 22px;
+  background-color: var(--yellow);
+  color: var(--navy);
+}
